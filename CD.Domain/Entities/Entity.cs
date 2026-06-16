@@ -1,4 +1,4 @@
-﻿namespace CD.Domain
+﻿namespace CD.Domain.Entities
 {
     public class Entity : IEquatable<Entity>
     {

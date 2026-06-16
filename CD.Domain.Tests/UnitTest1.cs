@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using CD.Domain.Entities;
+using System.Xml.Linq;
 
 namespace CD.Domain.Tests
 {

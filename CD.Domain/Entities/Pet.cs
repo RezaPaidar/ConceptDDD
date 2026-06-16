@@ -1,4 +1,6 @@
-﻿namespace CD.Domain
+﻿using CD.Domain.ValueObjects;
+
+namespace CD.Domain.Entities
 {
     public class Pet : Entity
     {

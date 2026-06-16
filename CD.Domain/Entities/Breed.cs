@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CD.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CD.Domain
+namespace CD.Domain.Entities
 {
     public class Breed: Entity
     {
@@ -24,18 +25,6 @@ namespace CD.Domain
             Name = name;
             MaleIdealWeight = maleIdealWeight;
             FemaleIdealWeight = femaleIdealWeight;
-        }
-    }
-
-    public record WeightRange
-    {
-        public decimal From { get; init; }
-        public decimal To { get; init; }
-
-        public WeightRange(decimal from, decimal to)
-        {
-            From = from;
-            To = to;
         }
     }
 }
