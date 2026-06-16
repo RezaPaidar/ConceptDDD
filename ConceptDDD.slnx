@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CD.Api/CD.Api.csproj" />
+  <Project Path="CD.Domain.Tests/CD.Domain.Tests.csproj" />
+  <Project Path="CD.Domain/CD.Domain.csproj" />
+</Solution>
