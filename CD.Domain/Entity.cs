@@ -2,7 +2,7 @@
 {
     public class Entity : IEquatable<Entity>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; init; }
         public bool Equals(Entity? other)
         {
             return other?.Id == Id;

@@ -6,8 +6,8 @@
         public void Pet_should_be_equal()
         {
             var id = Guid.NewGuid();
-            var pet1 = new Pet() { Id = id};
-            var pet2 = new Pet() { Id = id };
+            var pet1 = new Pet(id) { Name = "Belfi", Age = 7 };
+            var pet2 = new Pet(id) { Name = "Taffi", Age = 2 };
 
             Assert.True(pet1.Equals(pet2));
         }
@@ -16,8 +16,8 @@
         public void Pet_should_be_equal_using_operators()
         {
             var id = Guid.NewGuid();
-            var pet1 = new Pet() { Id = id };
-            var pet2 = new Pet() { Id = id };
+            var pet1 = new Pet(id);
+            var pet2 = new Pet(id);
 
             Assert.True(pet1 == pet2);
         }
@@ -27,8 +27,8 @@
         {
             var id1 = Guid.NewGuid();
             var id2 = Guid.NewGuid();
-            var pet1 = new Pet() { Id = id1 };
-            var pet2 = new Pet() { Id = id2 };
+            var pet1 = new Pet(id1);
+            var pet2 = new Pet(id2);
 
             Assert.True(pet1 != pet2);
         }
