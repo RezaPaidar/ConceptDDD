@@ -1,4 +1,4 @@
-namespace CD.Api
+namespace CD.Api.Management
 {
     public class WeatherForecast
     {
