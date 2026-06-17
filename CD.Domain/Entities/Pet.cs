@@ -1,4 +1,5 @@
 ﻿using CD.Domain.Management.ValueObjects;
+using CD.Domain.SharedKernel;
 
 namespace CD.Domain.Management.Entities
 {

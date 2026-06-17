@@ -1,4 +1,4 @@
-﻿namespace CD.Domain.Management.Entities
+﻿namespace CD.Domain.SharedKernel
 {
     public class Entity : IEquatable<Entity>
     {
