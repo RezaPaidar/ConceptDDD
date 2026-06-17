@@ -16,5 +16,7 @@ namespace CD.Domain.ValueObjects
                 throw new ArgumentException($"{value} as a vlaue is not valid");
             Value = value;
         }
+
+        public static implicit operator Weight(decimal value) { return new Weight(value); }
     }
 }

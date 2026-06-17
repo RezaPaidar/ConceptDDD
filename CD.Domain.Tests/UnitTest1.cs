@@ -13,9 +13,10 @@ namespace CD.Domain.Tests
             var service = new MockBreedService();
             var breedId = new BreedId(service.breeds[0].Id, service);
 
-            var pet1 = new Pet(id, "Belfi", 7, "Two-Colors", new Weight(25.2m), SexOfPet.Male, breedId);
-            var pet2 = new Pet(id, "Taffi", 2, "Three-Colors", new Weight(3.1m), SexOfPet.Female, breedId);
-
+            var pet1 = new Pet(id, "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId);
+            pet1.SetWeight(new Weight(25.2m), service);
+            var pet2 = new Pet(id, "Taffi", 2, "Three-Colors", SexOfPet.Female, breedId);
+            pet2.SetWeight(new Weight(3.1m), service);
             Assert.True(pet1.Equals(pet2));
         }
 
@@ -25,8 +26,10 @@ namespace CD.Domain.Tests
             var id = Guid.NewGuid();
             var service = new MockBreedService();
             var breedId = new BreedId(service.breeds[0].Id, service);
-            var pet1 = new Pet(id, "Belfi", 7, "Two-Colors", new Weight(25.2m), SexOfPet.Male, breedId);
-            var pet2 = new Pet(id, "Taffi", 2, "Three-Colors", new Weight(3.1m), SexOfPet.Female, breedId);
+            var pet1 = new Pet(id, "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId);
+            pet1.SetWeight(new Weight(25.2m), service);
+            var pet2 = new Pet(id, "Taffi", 2, "Three-Colors", SexOfPet.Female, breedId);
+            pet2.SetWeight(new Weight(3.1m), service);
 
             Assert.True(pet1 == pet2);
         }
@@ -40,8 +43,11 @@ namespace CD.Domain.Tests
             var breedId1 = new BreedId(service.breeds[0].Id, service);
             var breedId2 = new BreedId(service.breeds[1].Id, service);
 
-            var pet1 = new Pet(id1, "Belfi", 7, "Two-Colors", new Weight(25.2m), SexOfPet.Male, breedId1);
-            var pet2 = new Pet(id2, "Taffi", 2, "Three-Colors", new Weight(3.1m), SexOfPet.Female, breedId2);
+            var pet1 = new Pet(id1, "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId1);
+            pet1.SetWeight(new Weight(25.2m), service);
+            var pet2 = new Pet(id2, "Taffi", 2, "Three-Colors", SexOfPet.Female, breedId2);
+            pet2.SetWeight(new Weight(3.1m), service);
+
 
             Assert.True(pet1 != pet2);
         }
@@ -82,6 +88,42 @@ namespace CD.Domain.Tests
              {
                  var breedId = new BreedId(id, service);
              });
+        }
+
+        [Fact]
+        public void WeightClass_should_be_Ideal()
+        {
+            var service = new MockBreedService();
+            var breedId = new BreedId(service.breeds[0].Id, service);
+            var pet = new Pet(Guid.NewGuid(), "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId);
+            pet.SetWeight(10, service);
+
+            Assert.True(pet.WeightClass == WeightClass.Ideal);
+
+        }
+
+        [Fact]
+        public void WeightClass_should_be_Underweight()
+        {
+            var service = new MockBreedService();
+            var breedId = new BreedId(service.breeds[0].Id, service);
+            var pet = new Pet(Guid.NewGuid(), "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId);
+            pet.SetWeight(8, service);
+
+            Assert.True(pet.WeightClass == WeightClass.Underweight);
+
+        }
+
+        [Fact]
+        public void WeightClass_should_be_Overweight()
+        {
+            var service = new MockBreedService();
+            var breedId = new BreedId(service.breeds[0].Id, service);
+            var pet = new Pet(Guid.NewGuid(), "Belfi", 7, "Two-Colors", SexOfPet.Male, breedId);
+            pet.SetWeight(25, service);
+
+            Assert.True(pet.WeightClass == WeightClass.Overweight);
+
         }
     }
 }

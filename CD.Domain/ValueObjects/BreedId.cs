@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CD.Domain.ValueObjects
+﻿namespace CD.Domain.ValueObjects
 {
     public record BreedId
     {
@@ -21,7 +15,7 @@ namespace CD.Domain.ValueObjects
 
         private void ValidateBreed(Guid value)
         {
-            if(_breedService.GetBreed(value) == null)
+            if (_breedService.GetBreed(value) == null)
             {
                 throw new ArgumentException($"{value} is not valid.");
             }
