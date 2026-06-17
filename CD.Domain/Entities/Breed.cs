@@ -1,13 +1,8 @@
 ﻿using CD.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CD.Domain.Entities
 {
-    public class Breed: Entity
+    public class Breed : Entity
     {
         public string Name { get; set; }
 
@@ -20,8 +15,9 @@ namespace CD.Domain.Entities
         //public decimal FromFemaleIdealWeight { get; set; }
         //public decimal ToFemaleIdealWeight { get; set; }
 
-        public Breed(string name, WeightRange maleIdealWeight, WeightRange femaleIdealWeight)
+        public Breed(Guid id,string name, WeightRange maleIdealWeight, WeightRange femaleIdealWeight)
         {
+            Id = id;
             Name = name;
             MaleIdealWeight = maleIdealWeight;
             FemaleIdealWeight = femaleIdealWeight;
