@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CD.Domain.ValueObjects
+namespace CD.Domain.Management.ValueObjects
 {
     public record Weight
     {
@@ -17,6 +17,8 @@ namespace CD.Domain.ValueObjects
             Value = value;
         }
 
-        public static implicit operator Weight(decimal value) { return new Weight(value); }
+        public static implicit operator Weight(decimal value) { 
+            return new Weight(value);
+        }
     }
 }

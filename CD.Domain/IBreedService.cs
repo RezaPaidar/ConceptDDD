@@ -1,6 +1,6 @@
-﻿using CD.Domain.Entities;
+﻿using CD.Domain.Management.Entities;
 
-namespace CD.Domain
+namespace CD.Domain.Management
 {
     public interface IBreedService
     {

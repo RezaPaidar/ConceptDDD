@@ -15,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CD.Domain\CD.Domain.csproj" />
+    <ProjectReference Include="..\CD.Domain\CD.Domain.Management.csproj" />
   </ItemGroup>
+
 
   <ItemGroup>
     <Using Include="Xunit" />

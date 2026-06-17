@@ -1,4 +1,4 @@
-﻿namespace CD.Domain.ValueObjects
+﻿namespace CD.Domain.Management.ValueObjects
 {
     public record BreedId
     {

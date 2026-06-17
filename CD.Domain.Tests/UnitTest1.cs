@@ -1,8 +1,8 @@
-﻿using CD.Domain.Entities;
-using CD.Domain.ValueObjects;
+﻿using CD.Domain.Management.Entities;
+using CD.Domain.Management.ValueObjects;
 using System.Xml.Linq;
 
-namespace CD.Domain.Tests
+namespace CD.Domain.Management.Tests
 {
     public class UnitTest1
     {
