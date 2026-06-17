@@ -1,5 +1,15 @@
 <Solution>
-  <Project Path="CD.Api/CD.Api.csproj" />
+  <Project Path="CD.Api/CD.Api.Management.csproj">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
+  <Project Path="CD.Domain.Clinic/CD.Domain.Clinic.csproj" Id="eec6885d-0cb5-4041-8891-b5ef512a17b9">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
+  <Project Path="CD.Domain.SharedKernel/CD.Domain.SharedKernel.csproj" Id="e6f2d624-eb90-4c03-9a68-724e7d35c94f">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
   <Project Path="CD.Domain.Tests/CD.Domain.Tests.csproj" />
-  <Project Path="CD.Domain/CD.Domain.csproj" />
+  <Project Path="CD.Domain/CD.Domain.Management.csproj">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
 </Solution>
