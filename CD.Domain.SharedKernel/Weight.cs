@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CD.Domain.Management.ValueObjects
+namespace CD.Domain.SharedKernel
 {
     public record Weight
     {
