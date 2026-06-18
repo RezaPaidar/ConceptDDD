@@ -1,5 +1,6 @@
 ﻿using CD.Domain.Management.Entities;
 using CD.Domain.Management.ValueObjects;
+using CD.Domain.SharedKernel;
 using System.Xml.Linq;
 
 namespace CD.Domain.Management.Tests
