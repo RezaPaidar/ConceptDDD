@@ -1,10 +1,11 @@
 ﻿using CD.Domain.Clinic.ValueObjects;
 using CD.Domain.SharedKernel;
 
-namespace CD.Domain.Management.Clinic
+namespace CD.Domain.Clinic
 {
     public class Consultaion : AggregateRoot
     {
+        private readonly List<DrugAdministration> administretedDrugs = new();
         public DateTime StartedAdd { get; init; }
         public DateTime? EndedAt { get; private set; }
         public Text Diagnosis { get; private set; }
@@ -12,6 +13,7 @@ namespace CD.Domain.Management.Clinic
         public PatientId PatientId { get; set; }
         public Weight CurrentWeight { get; private set; }
         public ConsultationStatus Status { get; private set; }
+        public IReadOnlyCollection<DrugAdministration> AdministretedDrugs => administretedDrugs;
 
         public Consultaion(PatientId patientId)
         {
@@ -19,6 +21,13 @@ namespace CD.Domain.Management.Clinic
             this.PatientId = patientId;
             Status = ConsultationStatus.Open;
             this.StartedAdd = DateTime.UtcNow;
+        }
+
+        public void AdministerDrug(DrugId drugId, Dose dose)
+        {
+            ValidationConsultationStatus();
+            var newDrugAdministration = new DrugAdministration(drugId, dose);
+            this.administretedDrugs.Add(newDrugAdministration);
         }
 
         public void End()
